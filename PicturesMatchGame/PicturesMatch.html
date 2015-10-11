@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type="text/javascript">
+
+        var listOfWords = ["manzana", "plátano", "fresa"];
+
+        var listOfPictures = ["Manzana.png", "plátano.png", "fresa.png"];
+
+        var SelectedWordElement;
+
+        function StartGame(){
+            var gameFieldWords = document.getElementById("GameFieldWords");
+            var gameFieldPictures = document.getElementById("GameFieldPictures");
+
+            for (var i = 0; i < listOfWords.length; i++){
+                var newWordElement = document.createElement("div");
+                gameFieldWords.appendChild(newWordElement);
+                newWordElement.setAttribute("class","WordElement");
+                newWordElement.setAttribute("onClick", "WordElementClicked()");
+                newWordElement.setAttribute("align", "center");
+                newWordElement.innerText = listOfWords[i];
+
+                var newPictureElement = document.createElement("img");
+                gameFieldPictures.appendChild(newPictureElement);
+                newPictureElement.setAttribute("src", listOfPictures[i]);
+                newPictureElement.setAttribute("class", "PictureElement");
+                newPictureElement.setAttribute("onClick", "PictureElementClicked()");
+                var br = document.createElement('br');
+                gameFieldPictures.appendChild(br);
+            }
+        }
+
+        function WordElementClicked(){
+
+        }
+
+        function PictureElementClicked(){
+
+        }
+
+    </script>
+<link rel="stylesheet" href="Styles.css" type="text/css">
+</head>
+<body onload="StartGame()">
+
+<h2>Choose correct picture for every word!</h2>
+
+
+<div id="GameField">
+<section id="GameFieldWords"></section>
+    <section id="GameFieldPictures"></section>
+</div>
+
+<div id="ScoreField"></div>
+
+</body>
+</html>
